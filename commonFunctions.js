@@ -28,3 +28,24 @@ exports.sort_by_mark = (mark1, mark2, type) => {
         return mark2 - mark1;
 
 };
+
+exports.asyncFetchGet = async (url, params, headers = {credentials: 'include'}) => {
+    let data;
+    console.log(`${url}?${stringify(params)}`);
+    let response = await fetch(`${url}?${stringify(params)}`, headers);
+    let contentType = response.headers.get('content-type');
+    if (contentType.startsWith('application/json;'))
+        data = await response.json();
+    return data;
+};
+
+function stringify(obj) {
+    let queryString = '';
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            queryString += `${key}=${obj[key]}&`;
+        }
+    }
+    return queryString;
+}
+
