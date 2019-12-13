@@ -18,4 +18,4 @@ app.use(function (req, res) {
     res.status(404).send("Sorry can't find that API route!")
 });
 
-app.listen(3003, () => console.log('Listening on port 3003!'));
+app.listen(3000, () => console.log('Listening on port 3000!'));
