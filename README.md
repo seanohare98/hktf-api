@@ -1,8 +1,8 @@
 # hktf-api
 TODO:  
-Fix SQL queries/logic  
+Fix SQL queries
 Add endpoint tests  
-Enable SSL for db and site  
+Enable SSL (db and server) 
 Add Dockerfile    
-Implement caching  
+Implement Redux or Context-based state management
 Implement auto CI/CD (GitHub Actions)
